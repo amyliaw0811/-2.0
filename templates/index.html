@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>POP NOW 開箱神器 2.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <h1>歡迎使用 POP NOW 自動開箱神器！</h1>
+    <p>好運！祝你開出大熱門角色！</p>
+    <form method="post">
+        <label for="activity_url">POP NOW 活動頁面網址：</label><br>
+        <input type="text" id="activity_url" name="activity_url" required><br><br>
+
+        <label for="target_character">角色名稱（多角色用逗號分隔）：</label><br>
+        <input type="text" id="target_character" name="target_character" required><br><br>
+
+        <input type="submit" value="開始查詢">
+    </form>
+
+    {% if results %}
+        <h2>查詢結果：</h2>
+        <ul>
+        {% for result in results %}
+            <li>{{ result }}</li>
+        {% endfor %}
+        </ul>
+        <a href="/download">下載 Excel 結果</a>
+    {% endif %}
+</body>
+</html>
