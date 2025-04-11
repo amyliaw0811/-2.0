@@ -1,0 +1,7 @@
+Flask
+requests
+pandas
+openpyxl
+XlsxWriter
+python-telegram-bot==13.15
+playwright
